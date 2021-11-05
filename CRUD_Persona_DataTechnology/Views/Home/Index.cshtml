@@ -1,0 +1,11 @@
+﻿@model IEnumerable<CRUD_Persona_DataTechnology.Models.Entities.Person>
+@{
+    ViewData["Title"] = "Inicio - CRUD";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    <p>Clic en el siguiente botón para continuar</p>
+    @Html.ActionLink("Ver Personas", "Index", "People", "", new { @class = "btn btn-info" })
+</div>
+

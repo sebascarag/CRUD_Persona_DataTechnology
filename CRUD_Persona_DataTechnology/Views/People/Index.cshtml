@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CRUD_Persona_DataTechnology.Models.Entities.Person>
+
+@{
+    ViewData["Title"] = "CRUD Personas";
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Crear Persona</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeDocumentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Document)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeDocument.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Document)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthday)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonId" class = "btn btn-outline-warning">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonId" class = "btn btn-outline-danger">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
